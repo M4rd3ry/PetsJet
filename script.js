@@ -14,26 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Не удалось найти элементы: #hamburger или .navbar');
     }
 
-    // Обработчик попапа
+// Показ купона через 10 секунд
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const coupon = document.getElementById('coupon');
+        coupon.style.display = 'block';
+    }, 10000); // 10 секунд
+});
+
+// Закрытие купона
+document.getElementById('close-coupon').addEventListener('click', () => {
     const coupon = document.getElementById('coupon');
-    const closeBtn = document.getElementById('close-coupon');
-    
-    if (coupon && closeBtn) {
-        console.log('Попап и кнопка закрытия найдены');
+    coupon.style.display = 'none';
+});
 
-        // Показываем попап через 10 секунд
-        setTimeout(() => {
-            console.log('Попап показан');
-            coupon.classList.add('show');  // Добавляем класс для показа попапа
-        }, 10000); // Показываем попап через 10 секунд
-
-        closeBtn.addEventListener('click', () => {
-            console.log('Попап закрыт');
-            coupon.classList.remove('show');  // Убираем класс для скрытия попапа
-        });
-    } else {
-        console.error('Не удалось найти элементы: #coupon или #close-coupon');
-    }
 
     // Обработчик для отправки формы
     const form = document.getElementById('contact-form');
