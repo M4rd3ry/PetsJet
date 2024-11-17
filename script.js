@@ -1,39 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Проверка на существование гамбургера и навигации
-    const hamburger = document.getElementById('hamburger');
-    const navbar = document.querySelector('.navbar');
 
-    if (hamburger && navbar) {
-        console.log('Гамбургер и навигация найдены');
-        hamburger.addEventListener('click', () => {
-            console.log('Гамбургер кликнут');
-            navbar.classList.toggle('active'); // Переключаем класс "active" для отображения/скрытия меню
-        });
-        
-    } else {
-        console.error('Не удалось найти элементы: #hamburger или .navbar');
-    }
 // Логика для кнопки "Узнать больше"
 document.getElementById('learn-more').addEventListener('click', () => {
     alert('Вы узнаете больше о PetsJet в ближайшее время!');
 });
 
-// Функция для показа купона
-function showCoupon() {
-    document.getElementById('coupon').style.display = 'block';
-}
-
-// Функция для скрытия купона
-function closeCoupon() {
-    document.getElementById('coupon').style.display = 'none';
-}
 
 // Меню для мобильных устройств
 document.getElementById('hamburger').addEventListener('click', function() {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('active');
 });
+// Функция для отображения купона
+function showCoupon() {
+    document.getElementById("coupon").style.display = "block";
+}
 
+// Функция для скрытия купона
+function hideCoupon() {
+    document.getElementById("coupon").style.display = "none";
+}
+
+// Обработчик для гамбургер-меню
+const hamburger = document.getElementById('hamburger');
+const navbar = document.querySelector('.navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
 // Показ купона через 10 секунд
 //window.addEventListener('load', () => {
     //setTimeout(() => {

@@ -32,15 +32,15 @@
     <section id="services" class="services">
         <h2>Наши услуги</h2>
         <div class="cards">
-            <div class="card fade-in">
+            <div class="card">
                 <h3>Перевозка домашних животных</h3>
                 <p>Перевезем вашего питомца по всему миру с комфортом.</p>
             </div>
-            <div class="card fade-in">
+            <div class="card">
                 <h3>Услуги по оформлению документов</h3>
                 <p>Поможем с оформлением всех необходимых документов.</p>
             </div>
-            <div class="card fade-in">
+            <div class="card">
                 <h3>Консультации</h3>
                 <p>Проконсультируем по всем вопросам перевозки животных.</p>
             </div>
@@ -53,32 +53,32 @@
         <form id="contact-form">
             <label for="name">Имя:</label>
             <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-
+    
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Ваш email" required>
-
+    
             <label for="phone">Телефон:</label>
             <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" required>
-
+    
             <label for="messenger">Выберите мессенджер:</label>
             <select id="messenger" name="messenger">
                 <option value="whatsapp">WhatsApp</option>
                 <option value="telegram">Telegram</option>
                 <option value="viber">Viber</option>
             </select>
-
+    
             <label for="route">Маршрут (откуда и куда):</label>
             <input type="text" id="route" name="route" placeholder="Откуда и куда" required>
-
+    
             <label for="comments">Комментарии:</label>
             <textarea id="comments" name="comments" placeholder="Дополнительная информация" rows="5"></textarea>
-
+    
             <button type="submit">Отправить</button>
         </form>
     </section>
 
     <!-- Купон -->
-    <div id="coupon" class="coupon">
+    <div id="coupon">
         <p>Спасибо, что выбрали PetsJet!</p>
         <p>Получите скидку 10% на первую перевозку.</p>
         <button id="close-coupon" onclick="hideCoupon()">Закрыть</button>
