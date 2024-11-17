@@ -177,15 +177,7 @@ body {
     object-fit: cover; /* Изображения будут заполнять весь квадрат */
 }
 
-/* Анимация карусели */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
 
-.reviews-carousel {
-    animation: slide 10s infinite linear;
-}
 
 /* Мобильная адаптивность для карусели */
 @media (max-width: 768px) {
