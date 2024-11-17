@@ -187,10 +187,9 @@ body {
 }
 
 .review-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Изображение будет покрывать всю карточку */
-    border-radius: 10px;
+    width: 100%; /* Заполнение контейнера по ширине */
+    height: auto; /* Высота автоматически подстраивается */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило контейнер */
 }
 
 .reviews-carousel-wrapper {
@@ -201,11 +200,12 @@ body {
 }
 
 @media (max-width: 768px) {
-    .review-card {
-        width: 150px; /* Для мобильных устройств уменьшение карточек */
-        height: 150px;
+    .review-card img {
+        width: 100%;  /* Изображение по ширине */
+        height: auto;  /* Высота подстраивается */
     }
 }
+
 /* Стиль для стрелок */
 .slick-prev, .slick-next {
     background-color: rgba(0, 0, 0, 0.5);
