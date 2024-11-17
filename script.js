@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = "none";
         }
     });
+
     // Меню для мобильных устройств
     const hamburger = document.getElementById("hamburger");
     if (hamburger) {
@@ -29,39 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// Функция для отображения купона через 10 секунд
-setTimeout(function() {
-    document.getElementById('coupon').style.display = 'block';
-}, 10000);
+    // Функция для отображения купона через 10 секунд
+    setTimeout(function() {
+        document.getElementById('coupon').style.display = 'block';
+    }, 10000);
 
-// Функция для закрытия купона
-$(document).ready(function(){
-    $('.reviews-carousel').slick({
-        dots: true,         // Показать точки навигации
-        infinite: true,     // Бесконечная прокрутка
-        speed: 300,         // Скорость анимации
-        slidesToShow: 1,    // Показывать только один слайд за раз
-        slidesToScroll: 1,  // Прокручивать по одному слайду
-        autoplay: true,     // Автопрокрутка
-        autoplaySpeed: 2000, // Скорость автопрокрутки
+    // Функция для закрытия купона
+    document.getElementById('closeCouponBtn').addEventListener('click', function() {
+        document.getElementById('coupon').style.display = 'none';
     });
-});
 
-document.getElementById('closeCouponBtn').addEventListener('click', function() {
-    document.getElementById('coupon').style.display = 'none';
-});
+    // Код для карусели
+    let currentIndex = 0;
+    const carouselItems = document.querySelectorAll('.review-card');
+    const totalItems = carouselItems.length;
 
-    // Обработчик для кнопки "Получить скидку"
-    const couponButton = document.querySelector(".btn-primary");
-    if (couponButton) {
-        couponButton.addEventListener("click", showCoupon);
+    function moveCarousel() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        const offset = -currentIndex * 220; // 220px - ширина карточки + отступы
+        document.querySelector('.reviews-carousel').style.transform = `translateX(${offset}px)`;
     }
 
-    // Обработчик для закрытия купона
-    const closeCouponButton = document.getElementById('close-coupon');
-    if (closeCouponButton) {
-        closeCouponButton.addEventListener('click', hideCoupon);
-    }
+    setInterval(moveCarousel, 3000); // Каждые 3 секунды сдвигаем карусель
 
     // Обработчик для отправки формы
     const form = document.getElementById('contact-form');
@@ -136,7 +126,6 @@ document.getElementById('closeCouponBtn').addEventListener('click', function() {
                 fadeInElements.forEach((element) => {
                     const rect = element.getBoundingClientRect();
                     if (rect.top <= window.innerHeight) {
-                        console.log('Fade-in triggered for:', element);
                         element.classList.add('visible');
                     }
                 });

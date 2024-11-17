@@ -166,36 +166,44 @@ body {
     align-items: center;
     gap: 15px;
     overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .review-card {
+    width: 200px; /* Фиксированная ширина карточки */
+    height: 200px; /* Фиксированная высота карточки */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     border-radius: 10px;
-    background-color: #fff;
-    text-align: center;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
 }
 
 .review-card img {
     width: 100%;
-    max-width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: 100%;
+    object-fit: cover; /* Изображение будет покрывать всю карточку */
+    border-radius: 10px;
+}
+
+.reviews-carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
-    .review-card img {
-        max-width: 90%;
-        height: auto;
-    }
-
-    .reviews-carousel {
-        flex-wrap: wrap;
-        justify-content: center;
+    .review-card {
+        width: 150px; /* Для мобильных устройств уменьшение карточек */
+        height: 150px;
     }
 }
 
