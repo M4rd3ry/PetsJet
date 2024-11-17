@@ -163,8 +163,10 @@ body {
 .reviews-carousel {
     display: flex;
     gap: 15px;
-    overflow: hidden;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 
 .review-card {
@@ -174,6 +176,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     background-color: #fff;
+    text-align: center;
 }
 
 .review-card img {
@@ -190,6 +193,7 @@ body {
         height: auto;
     }
 }
+
 
 
 
