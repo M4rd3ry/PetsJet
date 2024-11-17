@@ -194,13 +194,21 @@ form button:hover {
 }
 
 /* Купон */
-.coupon {
-    background-color: #f8d7da;
-    color: #721c24;
+#coupon {
+    position: fixed; /* Фиксируем окно в одном месте */
+    top: 50%; /* Сдвигаем на 50% от верхней границы */
+    left: 50%; /* Сдвигаем на 50% от левой границы */
+    transform: translate(-50%, -50%); /* Центрируем окно относительно его размеров */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+    color: #333;
     padding: 20px;
     text-align: center;
-    display: none;
+    z-index: 1000; /* Окно всегда будет поверх контента */
+    display: none; /* Изначально окно скрыто */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .coupon button {
     background-color: #721c24;
