@@ -1,12 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => { 
-    // Логика для кнопки "Узнать больше"
-    const learnMoreButton = document.getElementById('learn-more');
-    if (learnMoreButton) {
-        learnMoreButton.addEventListener('click', () => {
-            alert('Вы узнаете больше о PetsJet в ближайшее время!');
-        });
-    }
+    // Логика для кнопки "О нас"
+    const aboutUsBtn = document.getElementById("about-us-btn");
+    const modal = document.getElementById("about-modal");
+    const closeModal = document.getElementById("close-modal");
 
+    aboutUsBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+    });
+
+    closeModal.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
     // Меню для мобильных устройств
     const hamburger = document.getElementById("hamburger");
     if (hamburger) {

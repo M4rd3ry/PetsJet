@@ -17,9 +17,18 @@
         <nav class="navbar">
             <a href="#services">Услуги</a>
             <a href="#contact">Контакты</a>
-            <a href="#about">О нас</a>
+            <a href="#" id="about-us-btn">О нас</a> <!-- Кнопка "О нас" -->
         </nav>
     </header>
+
+    <!-- Модальное окно "О нас" -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>О компании PetsJet</h2>
+            <p>Мы предоставляем услуги по перевозке домашних животных по всему миру с заботой о безопасности и комфорте ваших питомцев.</p>
+        </div>
+    </div>
 
     <!-- Главная секция -->
     <section class="hero">
@@ -27,8 +36,9 @@
         <p>Перевозим ваших питомцев по всему миру</p>
         <button class="btn-primary" onclick="showCoupon()">Получить скидку</button>
     </section>
-     <!-- Услуги -->
-     <section id="services" class="services">
+    
+    <!-- Услуги -->
+    <section id="services" class="services">
         <h2>Наши услуги</h2>
         <div class="cards">
             <div class="card fade-in">
