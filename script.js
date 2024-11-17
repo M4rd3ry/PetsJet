@@ -1,47 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
+    // Логика для кнопки "Узнать больше"
+    document.getElementById('learn-more').addEventListener('click', () => {
+        alert('Вы узнаете больше о PetsJet в ближайшее время!');
+    });
 
-// Логика для кнопки "Узнать больше"
-document.getElementById('learn-more').addEventListener('click', () => {
-    alert('Вы узнаете больше о PetsJet в ближайшее время!');
-});
+    // Меню для мобильных устройств
+    document.getElementById("hamburger").addEventListener("click", function() {
+        var navbar = document.querySelector(".navbar");
+        navbar.classList.toggle("active"); // Переключаем класс для отображения/скрытия меню
+    });
 
+    // Функция для отображения купона
+    function showCoupon() {
+        document.getElementById("coupon").style.display = "block";
+    }
 
-// Меню для мобильных устройств
-document.getElementById('hamburger').addEventListener('click', function() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
-});
-// Функция для отображения купона
-function showCoupon() {
-    document.getElementById("coupon").style.display = "block";
-}
+    // Функция для скрытия купона
+    function hideCoupon() {
+        document.getElementById("coupon").style.display = "none";
+    }
 
-// Функция для скрытия купона
-function hideCoupon() {
-    document.getElementById("coupon").style.display = "none";
-}
+    // Обработчик для кнопки "Получить скидку"
+    document.querySelector(".btn-primary").addEventListener("click", showCoupon);
 
-// Обработчик для гамбургер-меню
-const hamburger = document.getElementById('hamburger');
-const navbar = document.querySelector('.navbar');
-
-hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-});
-// Показ купона через 10 секунд
-//window.addEventListener('load', () => {
-    //setTimeout(() => {
-//        const coupon = document.getElementById('coupon');
-//        coupon.classList.add('show');
-//    }, 10000); // 10 секунд
-//});
-
-// Закрытие купона
-//document.getElementById('close-coupon').addEventListener('click', () => {
-    //const coupon = document.getElementById('coupon');
-    //coupon.classList.remove('show');
-//});
-
+    // Обработчик для закрытия купона
+    document.getElementById('close-coupon').addEventListener('click', hideCoupon);
 
     // Обработчик для отправки формы
     const form = document.getElementById('contact-form');
