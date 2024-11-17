@@ -162,15 +162,15 @@ body {
 /* Контейнер для карусели */
 .reviews-carousel {
     display: flex;
-    gap: 15px;
     justify-content: center;
     align-items: center;
+    gap: 15px;
     overflow: hidden;
-    flex-wrap: nowrap;
 }
 
 .review-card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -181,18 +181,24 @@ body {
 
 .review-card img {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
     .review-card img {
-        max-width: 80%;
+        max-width: 90%;
         height: auto;
     }
+
+    .reviews-carousel {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
+
 
 
 
