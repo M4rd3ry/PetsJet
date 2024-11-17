@@ -29,21 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Функция для отображения купона
-    function showCoupon() {
-        const coupon = document.getElementById("coupon");
-        if (coupon) {
-            coupon.style.display = "block";
-        }
-    }
+// Функция для отображения купона через 10 секунд
+setTimeout(function() {
+    document.getElementById('coupon').style.display = 'block';
+}, 10000);  // 10000 миллисекунд = 10 секунд
 
-    // Функция для скрытия купона
-    function hideCoupon() {
-        const coupon = document.getElementById("coupon");
-        if (coupon) {
-            coupon.style.display = "none";
-        }
-    }
+// Функция для закрытия купона
+function closeCoupon() {
+    document.getElementById('coupon').style.display = 'none';
+}
 
     // Обработчик для кнопки "Получить скидку"
     const couponButton = document.querySelector(".btn-primary");
