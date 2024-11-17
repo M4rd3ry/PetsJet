@@ -1,6 +1,9 @@
 /* Основные стили */
 body {
-    background: linear-gradient(135deg, #f7f7f7, #e6e6e6);
+    background: url('pexels-romakaiuk-11728512.jpg') repeat;
+    background-size: cover; /* Масштабирование для заполнения экрана */
+    background-attachment: fixed; /* Фон остаётся фиксированным при прокрутке */
+    background-position: center;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
