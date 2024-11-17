@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Функция для отображения купона через 10 секунд
 setTimeout(function() {
     document.getElementById('coupon').style.display = 'block';
-}, 10000);  // 10000 миллисекунд = 10 секунд
+}, 10000);
 
 // Функция для закрытия купона
-function closeCoupon() {
+document.getElementById('closeCouponBtn').addEventListener('click', function() {
     document.getElementById('coupon').style.display = 'none';
-}
+});
 
     // Обработчик для кнопки "Получить скидку"
     const couponButton = document.querySelector(".btn-primary");
