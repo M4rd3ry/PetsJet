@@ -1,3 +1,4 @@
+/* Сброс стилей и основные настройки */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,53 +6,214 @@ body {
     padding: 0;
 }
 
+/* Стили для шапки */
 .header {
-    background: #4CAF50;
+    background-color: #333; /* Тёмный цвет фона */
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
+/* Основные секции */
 .section {
     padding: 20px 0;
 }
 
+/* Контейнер с ограничением ширины */
 .container {
     width: 80%;
     margin: auto;
 }
 
+/* Заголовки */
 h2 {
     text-align: center;
     margin-bottom: 10px;
 }
 
+/* Стили формы */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-}
-
-.popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #FFD700;
-    padding: 10px;
-    border: 1px solid #000;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    display: none;
+    background-color: #f9f9f9;
 }
 
-.popup.hidden {
-    display: none;
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Легкое увеличение */
+}
+
+/* Скрытые элементы */
+.hidden {
+    display: none; /* Скрывает элемент */
+}
+
+
+
+/* Стили для попапа */
+#coupon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    z-index: 1000;
+    display: none;  /* Скрыто по умолчанию */
+    width: 80%; /* Ограничиваем ширину */
+    max-width: 500px; /* Максимальная ширина */
+    text-align: center; /* Выравнивание текста */
+    box-sizing: border-box; /* Учитываем padding в расчете размеров */
+}
+
+/* Класс для отображения попапа */
+#coupon.show {
+    display: block; /* Показываем попап */
+}
+
+/* Кнопка закрытия */
+#close-coupon {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#close-coupon:hover {
+    background-color: #45a049;
+}
+
+
+/* Стили для подвала */
 .footer {
     text-align: center;
     padding: 10px 0;
     background: #222;
     color: white;
+}
+
+/* Стили для гамбургера и меню */
+#hamburger {
+    display: none;  /* Гамбургер скрыт по умолчанию */
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+    }
+
+    .navbar.active {
+        display: block; /* Меню отображается, когда класс active */
+    }
+
+    #hamburger {
+        display: block; /* Показываем гамбургер на мобильных устройствах */
+    }
+
+    .navbar a {
+        padding: 15px;
+        display: block;
+        color: white;
+        background-color: #4CAF50;
+        border-radius: 4px;
+    }
+
+    .navbar a:hover {
+        background-color: #45a049;
+    }
+}
+
+/* Основное меню */
+.navbar {
+    display: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: white; /* Белый текст */
+    background-color: #4CAF50;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #45a049; /* Цвет при наведении */
+}
+
+/* Элементы с плавной анимацией */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Элементы с задержкой */
+.delayed-animation {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.delayed-animation.delay-1 {
+    transition-delay: 0.5s;
+}
+
+.delayed-animation.delay-2 {
+    transition-delay: 1s;
+}
+
+.delayed-animation.visible {
+    opacity: 1;
+}
+
+/* Увеличение изображения при наведении */
+.zoom-on-hover {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.1); /* Увеличение изображения */
+}
+
+.zoom-on-hover[alt] {
+    display: none; /* Скрывает alt-текст */
 }
