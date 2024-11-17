@@ -35,6 +35,18 @@ setTimeout(function() {
 }, 10000);
 
 // Функция для закрытия купона
+$(document).ready(function(){
+    $('.reviews-carousel').slick({
+        dots: true,         // Показать точки навигации
+        infinite: true,     // Бесконечная прокрутка
+        speed: 300,         // Скорость анимации
+        slidesToShow: 1,    // Показывать только один слайд за раз
+        slidesToScroll: 1,  // Прокручивать по одному слайду
+        autoplay: true,     // Автопрокрутка
+        autoplaySpeed: 2000, // Скорость автопрокрутки
+    });
+});
+
 document.getElementById('closeCouponBtn').addEventListener('click', function() {
     document.getElementById('coupon').style.display = 'none';
 });

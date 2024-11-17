@@ -161,20 +161,14 @@ body {
 
 /* Контейнер для карусели */
 .reviews-carousel {
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    position: relative;
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* Карточка отзыва */
 .review-card {
-    width: 150px;
-    height: 150px; /* Размер квадрата */
-    background-color: #fff;
-    margin: 0 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    padding: 10px;
+    text-align: center;
 }
 
 .review-card img {
