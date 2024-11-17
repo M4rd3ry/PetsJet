@@ -13,19 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Не удалось найти элементы: #hamburger или .navbar');
     }
-
+// Логика для кнопки "Узнать больше"
+document.getElementById('learn-more').addEventListener('click', () => {
+    alert('Вы узнаете больше о PetsJet в ближайшее время!');
+});
 // Показ купона через 10 секунд
 window.addEventListener('load', () => {
     setTimeout(() => {
         const coupon = document.getElementById('coupon');
-        coupon.style.display = 'block';
+        coupon.classList.add('show');
     }, 10000); // 10 секунд
 });
 
 // Закрытие купона
 document.getElementById('close-coupon').addEventListener('click', () => {
     const coupon = document.getElementById('coupon');
-    coupon.style.display = 'none';
+    coupon.classList.remove('show');
 });
 
 
