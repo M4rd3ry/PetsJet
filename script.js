@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => { 
+document.addEventListener('DOMContentLoaded', () => {
     // Логика для кнопки "О нас"
     const aboutUsBtn = document.getElementById("about-us-btn");
     const modal = document.getElementById("about-modal");
@@ -30,28 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Логика для карусели
+    $(document).ready(function(){
+        $('.reviews-carousel').slick({
+            dots: true,             // Показывать точки
+            arrows: true,           // Показывать стрелки
+            infinite: true,         // Бесконечная прокрутка
+            speed: 300,             // Скорость анимации
+            slidesToShow: 1,        // Показывать один слайд
+            slidesToScroll: 1,      // Прокручивать один слайд
+            autoplay: true,         // Автопрокрутка
+            autoplaySpeed: 2000,    // Скорость автопрокрутки
+            prevArrow: '<button type="button" class="slick-prev">←</button>',  // Левый стрелочник
+            nextArrow: '<button type="button" class="slick-next">→</button>',  // Правый стрелочник
+        });
+    });
+
     // Функция для отображения купона через 10 секунд
     setTimeout(function() {
         document.getElementById('coupon').style.display = 'block';
     }, 10000);
 
-    // Функция для закрытия купона
+    // Закрытие купона
     document.getElementById('closeCouponBtn').addEventListener('click', function() {
         document.getElementById('coupon').style.display = 'none';
     });
-
-    // Код для карусели
-    let currentIndex = 0;
-    const carouselItems = document.querySelectorAll('.review-card');
-    const totalItems = carouselItems.length;
-
-    function moveCarousel() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        const offset = -currentIndex * 220; // 220px - ширина карточки + отступы
-        document.querySelector('.reviews-carousel').style.transform = `translateX(${offset}px)`;
-    }
-
-    setInterval(moveCarousel, 3000); // Каждые 3 секунды сдвигаем карусель
 
     // Обработчик для отправки формы
     const form = document.getElementById('contact-form');
