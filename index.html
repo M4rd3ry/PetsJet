@@ -3,61 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Перевозка домашних животных по всему миру с PetsJet. Надежно и безопасно.">
-    <meta name="keywords" content="перевозка, домашние животные, транспортировка, PetsJet">
-    <title>PetsJet - Перевозка домашних животных</title>
+    <title>PetsJet</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Шапка -->
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>PetsJet</h1>
-                <p>Международная перевозка домашних животных</p>
-            </div>
-            <button id="hamburger">☰</button>
-            <nav class="navbar">
-                <a href="#home">Главная</a>
-                <a href="#about">О нас</a>
-                <a href="#services">Услуги</a>
-                <a href="#contact">Контакты</a>
-            </nav>
+        <div class="logo">
+            <h1>PetsJet</h1>
         </div>
+        <span id="hamburger">&#9776;</span>
+        <nav class="navbar">
+            <a href="#services">Услуги</a>
+            <a href="#contact">Контакты</a>
+            <a href="#about">О нас</a>
+        </nav>
     </header>
 
-    <main>
-        <!-- Главная секция -->
-        <section id="home" class="hero">
-            <h1>Перевозка ваших питомцев<br>без стресса и забот</h1>
-            <p>Надежно. Быстро. Заботливо.</p>
-            <button class="btn-primary" onclick="showCoupon()">Получить купон</button>
-        </section>
+    <!-- Главная секция -->
+    <section class="hero">
+        <h1>Добро пожаловать в PetsJet!</h1>
+        <p>Перевозим ваших питомцев по всему миру</p>
+        <button class="btn-primary" onclick="showCoupon()">Получить скидку</button>
+    </section>
 
-        <!-- О нас -->
-        <section id="about" class="about">
-            <h2>О нас</h2>
-            <p>Мы предоставляем услуги безопасной транспортировки домашних животных по всему миру. Наш приоритет — комфорт и безопасность ваших питомцев.</p>
-        </section>
-
-        <!-- Услуги -->
-        <section id="services" class="services">
-            <h2>Услуги</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Авиа перевозка</h3>
-                    <p>Надежные решения для воздушных путешествий ваших питомцев.</p>
-                </div>
-                <div class="card">
-                    <h3>Сопровождение</h3>
-                    <p>Опытные специалисты обеспечивают комфортный путь.</p>
-                </div>
-                <div class="card">
-                    <h3>Документы</h3>
-                    <p>Мы берём на себя подготовку всех необходимых документов.</p>
-                </div>
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <h2>Наши услуги</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Перевозка домашних животных</h3>
+                <p>Перевезем вашего питомца по всему миру с комфортом.</p>
             </div>
-        </section>
+            <div class="card">
+                <h3>Услуги по оформлению документов</h3>
+                <p>Поможем с оформлением всех необходимых документов.</p>
+            </div>
+            <div class="card">
+                <h3>Консультации</h3>
+                <p>Проконсультируем по всем вопросам перевозки животных.</p>
+            </div>
+        </div>
+    </section>
 
         <!-- Контакты -->
         <section id="contact" class="contact">
