@@ -171,8 +171,8 @@ body {
 }
 
 .review-card {
-    width: 200px; /* Фиксированная ширина карточки */
-    height: 200px; /* Фиксированная высота карточки */
+    width: 180px; /* Установим фиксированную ширину карточки */
+    height: 180px; /* Фиксированная высота */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,7 +181,11 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease;
 }
-
+.review-card img {
+    width: 100%; /* Ширина изображения по контейнеру */
+    height: 100%; /* Высота изображения по контейнеру */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило карточку */
+}
 .review-card:hover {
     transform: scale(1.05); /* Увеличение карточки при наведении */
 }
@@ -200,9 +204,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    .review-card img {
-        width: 100%;  /* Изображение по ширине */
-        height: auto;  /* Высота подстраивается */
+    .review-card {
+        width: 120px; /* Уменьшаем ширину для мобильных */
+        height: 120px;
     }
 }
 
