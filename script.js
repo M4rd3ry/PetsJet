@@ -76,12 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 comments: comments || 'Нет'
             };
 
-            // Блокируем кнопку отправки до завершения запроса
-            const submitButton = form.querySelector('button[type="submit"]');
-            if (submitButton) {
-                submitButton.disabled = true;
-            }
-
             // Отправляем данные в Telegram-бот
             const telegramBotToken = '7517099152:AAFrNoJT-BENa922VSLvHIB_gwmtveMXYuQ';
             const chatId = '793874940';
@@ -111,12 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch((error) => {
                 console.error('Ошибка при отправке заявки:', error);
                 alert('Не удалось отправить заявку. Проверьте ваше интернет-соединение.');
-            })
-            .finally(() => {
-                // Включаем кнопку обратно после завершения запроса
-                if (submitButton) {
-                    submitButton.disabled = false;
-                }
             });
         });
     }
