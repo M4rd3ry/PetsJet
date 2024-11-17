@@ -1,30 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => { 
     // Логика для кнопки "Узнать больше"
-    document.getElementById('learn-more').addEventListener('click', () => {
-        alert('Вы узнаете больше о PetsJet в ближайшее время!');
-    });
+    const learnMoreButton = document.getElementById('learn-more');
+    if (learnMoreButton) {
+        learnMoreButton.addEventListener('click', () => {
+            alert('Вы узнаете больше о PetsJet в ближайшее время!');
+        });
+    }
 
     // Меню для мобильных устройств
-    document.getElementById("hamburger").addEventListener("click", function() {
-        var navbar = document.querySelector(".navbar");
-        navbar.classList.toggle("active"); // Переключаем класс для отображения/скрытия меню
-    });
+    const hamburger = document.getElementById("hamburger");
+    if (hamburger) {
+        hamburger.addEventListener("click", function() {
+            const navbar = document.querySelector(".navbar");
+            if (navbar) {
+                navbar.classList.toggle("active"); // Переключаем класс для отображения/скрытия меню
+            }
+        });
+    }
 
     // Функция для отображения купона
     function showCoupon() {
-        document.getElementById("coupon").style.display = "block";
+        const coupon = document.getElementById("coupon");
+        if (coupon) {
+            coupon.style.display = "block";
+        }
     }
 
     // Функция для скрытия купона
     function hideCoupon() {
-        document.getElementById("coupon").style.display = "none";
+        const coupon = document.getElementById("coupon");
+        if (coupon) {
+            coupon.style.display = "none";
+        }
     }
 
     // Обработчик для кнопки "Получить скидку"
-    document.querySelector(".btn-primary").addEventListener("click", showCoupon);
+    const couponButton = document.querySelector(".btn-primary");
+    if (couponButton) {
+        couponButton.addEventListener("click", showCoupon);
+    }
 
     // Обработчик для закрытия купона
-    document.getElementById('close-coupon').addEventListener('click', hideCoupon);
+    const closeCouponButton = document.getElementById('close-coupon');
+    if (closeCouponButton) {
+        closeCouponButton.addEventListener('click', hideCoupon);
+    }
 
     // Обработчик для отправки формы
     const form = document.getElementById('contact-form');
@@ -56,6 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 comments: comments || 'Нет'
             };
 
+            // Блокируем кнопку отправки до завершения запроса
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
+
             // Отправляем данные в Telegram-бот
             const telegramBotToken = '7517099152:AAFrNoJT-BENa922VSLvHIB_gwmtveMXYuQ';
             const chatId = '793874940';
@@ -85,6 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch((error) => {
                 console.error('Ошибка при отправке заявки:', error);
                 alert('Не удалось отправить заявку. Проверьте ваше интернет-соединение.');
+            })
+            .finally(() => {
+                // Включаем кнопку обратно после завершения запроса
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
             });
         });
     }
