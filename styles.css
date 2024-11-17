@@ -207,6 +207,8 @@ form button:hover {
     display: none; /* Изначально окно скрыто */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: auto; /* Автоматическая высота */
+    min-height: 150px; /* Минимальная высота */
 }
 
 
