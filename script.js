@@ -17,19 +17,36 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('learn-more').addEventListener('click', () => {
     alert('Вы узнаете больше о PetsJet в ближайшее время!');
 });
-// Показ купона через 10 секунд
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const coupon = document.getElementById('coupon');
-        coupon.classList.add('show');
-    }, 10000); // 10 секунд
+
+// Функция для показа купона
+function showCoupon() {
+    document.getElementById('coupon').style.display = 'block';
+}
+
+// Функция для скрытия купона
+function closeCoupon() {
+    document.getElementById('coupon').style.display = 'none';
+}
+
+// Меню для мобильных устройств
+document.getElementById('hamburger').addEventListener('click', function() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
 });
 
+// Показ купона через 10 секунд
+//window.addEventListener('load', () => {
+    //setTimeout(() => {
+//        const coupon = document.getElementById('coupon');
+//        coupon.classList.add('show');
+//    }, 10000); // 10 секунд
+//});
+
 // Закрытие купона
-document.getElementById('close-coupon').addEventListener('click', () => {
-    const coupon = document.getElementById('coupon');
-    coupon.classList.remove('show');
-});
+//document.getElementById('close-coupon').addEventListener('click', () => {
+    //const coupon = document.getElementById('coupon');
+    //coupon.classList.remove('show');
+//});
 
 
     // Обработчик для отправки формы
