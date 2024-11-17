@@ -9,76 +9,82 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>PetsJet</h1>
+                <p>Международная перевозка домашних животных</p>
+            </div>
+            <nav class="navbar">
+                <a href="#home">Главная</a>
+                <a href="#about">О нас</a>
+                <a href="#services">Услуги</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+        </div>
+    </header>
+<!-- Купон -->
+<div id="coupon" class="hidden">
+    <p>Получите скидку 20%! Промокод: WELCOME20</p>
+    <button id="close-coupon">Закрыть</button>
+</div>
+    <!-- Главная секция -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Забота о ваших питомцах<br>на первом месте</h1>
+            <p>Мы предоставляем надёжные услуги по транспортировке домашних животных.</p>
+            <button class="btn-primary">Узнать больше</button>
+        </div>
+    </section>
 
-    <!-- Гамбургер -->
-    <div id="hamburger">☰</div>
-    <!-- Навигация -->
-    <nav class="navbar">
-        <a href="#home">Главная</a>
-        <a href="#about">О нас</a>
-        <a href="#services">Услуги</a>
-        <a href="#contact">Контакты</a>
-    </nav>
+    <!-- О нас -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О нас</h2>
+            <p>PetsJet – это команда профессионалов, которые обеспечивают комфортное и безопасное путешествие для ваших любимцев.</p>
+        </div>
+    </section>
 
-    <div id="coupon" class="hidden">
-        <p>Получите скидку 20%! Промокод: WELCOME20</p>
-        <button id="close-coupon">Закрыть</button>
-    </div>
-    
-
-    <main>
-        <section id="home">
-            <h1>Главная</h1>
-            <p>Добро пожаловать на сайт PetsJet!</p>
-        </section>
-        <section id="about">
-            <h1>О нас</h1>
-            <p>Профессиональная перевозка домашних животных по всему миру.</p>
-        </section>
-        <section id="services">
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
             <h2>Наши услуги</h2>
-            <ul>
-                <li>Транспортировка воздушным и наземным транспортом</li>
-                <li>Сопровождение животных</li>
-                <li>Помощь в покупке билетов</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Оставить заявку</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Авиа перевозка</h3>
+                    <p>Безопасное путешествие ваших питомцев по воздуху.</p>
+                </div>
+                <div class="card">
+                    <h3>Документы</h3>
+                    <p>Мы обеспечим сбор всех необходимых бумаг для перевозки.</p>
+                </div>
+                <div class="card">
+                    <h3>Сопровождение</h3>
+                    <p>Специалисты, которые заботятся о вашем питомце в пути.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
             <form id="contact-form">
-                <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required>
-        
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-        
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" required>
-        
-                <label for="messenger">Выберите мессенджер:</label>
-                <select id="messenger" name="messenger">
-                    <option value="telegram">Telegram</option>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="viber">Viber</option>
-                </select>
-        
-                <label for="route">Маршрут (откуда и куда):</label>
-                <input type="text" id="route" name="route" required>
-        
-                <label for="comments">Комментарии:</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-        
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" rows="4"></textarea>
                 <button type="submit">Отправить</button>
             </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2024 PetsJet</p>
-    </footer>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
-    <img src="PetsJet.jpg" class="zoom-on-hover" alt="Zoomable Image">
-    
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 PetsJet. Все права защищены.</p>
+        </div>
+    </footer>
 </body>
 </html>
