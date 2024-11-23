@@ -1,3 +1,11 @@
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 document.addEventListener('DOMContentLoaded', () => {
     // Логика для кнопки "О нас"
     const aboutUsBtn = document.getElementById("about-us-btn");

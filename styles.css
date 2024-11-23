@@ -1,24 +1,23 @@
 /* Основные стили */
 body {
-    background: 
-        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-        url('img/_111111.png') repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
+
 
 /* Шапка */
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo h1 {
@@ -124,12 +123,23 @@ body {
 }
 
 .card {
-    background-color: #fff;
-    padding: 20px;
-    width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "🐾"; /* Замените на подходящий символ или иконку */
+    font-size: 3rem;
+    color: #007bff;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .card h3 {
@@ -153,10 +163,21 @@ body {
 }
 /* Фон и отступы для секции отзывов */
 .reviews {
-    background: linear-gradient(135deg, #f7f7f7, #e6e6e6);
-    padding: 60px 20px;
-    text-align: center;
-    position: relative;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #fff;
+    padding: 80px 20px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.slick-prev, .slick-next {
+    background-color: #ff7f50 !important;
+    color: #fff !important;
+    border: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #fff !important;
 }
 
 /* Заголовок отзывов */
@@ -261,33 +282,22 @@ form label {
     margin: 10px 0;
 }
 
-form input,
-form select,
-form textarea {
-    padding: 10px;
-    margin: 10px 0;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+form input:focus, form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
 
 form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Купон */
 #coupon {
-    animation: fadeIn 0.5s ease-out;
+    animation: bounceIn 0.6s ease-out;
     position: fixed; /* Фиксируем окно в одном месте */
     top: 50%; /* Сдвигаем на 50% от верхней границы */
     left: 50%; /* Сдвигаем на 50% от левой границы */
