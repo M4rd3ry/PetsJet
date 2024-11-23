@@ -31,20 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Логика для карусели
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.reviews-carousel').slick({
-            dots: true,             // Показывать точки
-            arrows: true,           // Показывать стрелки
-            infinite: true,         // Бесконечная прокрутка
-            speed: 300,             // Скорость анимации
-            slidesToShow: 1,        // Показывать один слайд
-            slidesToScroll: 1,      // Прокручивать один слайд
-            autoplay: true,         // Автопрокрутка
-            autoplaySpeed: 2000,    // Скорость автопрокрутки
-            prevArrow: '<button type="button" class="slick-prev">←</button>',  // Левый стрелочник
-            nextArrow: '<button type="button" class="slick-next">→</button>',  // Правый стрелочник
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    },
+                },
+            ],
         });
     });
+    
 
     // Функция для отображения купона через 10 секунд
     setTimeout(function() {
